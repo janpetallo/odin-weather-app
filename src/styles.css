@@ -54,8 +54,8 @@ body {
 }
 
 #header #app img {
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
   margin-right: 1rem;
 }
 
@@ -67,13 +67,43 @@ body {
 }
 
 #header #app #title_container #app_title {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
 }
 
 #header #app #title_container #app_subtitle {
   font-size: 0.6rem;
   font-weight: 400;
+}
+
+#header #searchContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#header #searchContainer input {
+  width: 10rem;
+  height: 1rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+#header #searchContainer button {
+  
+  height: 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: white;
+  margin-left: 0.5rem;
+}
+
+#header #searchContainer img {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
 }
 
 
