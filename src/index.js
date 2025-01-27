@@ -10,20 +10,18 @@ import { displayWeeklyForecast } from "./modules/weekly";
 
 
 async function fetchWeatherData() {
-
     const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/calgary?unitGroup=us&key=MKKNHQDK4MYP85WWXKVT6FV2V&contentType=json`);
     const data = await response.json();
     console.log(data);
-    displayCurrentConditions(data);
-    displayWeeklyForecast(data);
+    
+    return data;
 
 }
 
-
-
-
-
-fetchWeatherData();
+fetchWeatherData().then(data => {
+    displayCurrentConditions(data);
+    displayWeeklyForecast(data);
+});
 
 
 
