@@ -30,13 +30,7 @@ body {
 
   grid-column: 1 / span 2;
 
-
-
-
-
 }
-
-
 
 #currentConditions {
   background-color: var(--secondary-color);
@@ -49,5 +43,38 @@ body {
   padding: 1rem;
   text-align: center;
 }
+
+
+#header #app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+
+}
+
+#header #app img {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1rem;
+}
+
+#header #app #title_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#header #app #title_container #app_title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+#header #app #title_container #app_subtitle {
+  font-size: 0.6rem;
+  font-weight: 400;
+}
+
 
 
