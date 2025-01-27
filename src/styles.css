@@ -16,6 +16,38 @@ body {
 .app-container {
   height: 100vh;
   padding: 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 3fr;
+}
+
+#header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+
+  grid-column: 1 / span 2;
+
+
+
+
+
+}
+
+
+
+#currentConditions {
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  text-align: center;
+}
+
+#weeklyForecast {
+  background-color: var(--bg-color);
+  padding: 1rem;
+  text-align: center;
 }
 
 
