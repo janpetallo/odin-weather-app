@@ -6,6 +6,7 @@ import * as bootstrap from "bootstrap";
 
 // import our JS functions
 import { displayCurrentConditions } from "./modules/current";
+import { displayWeeklyForecast } from "./modules/weekly";
 
 
 async function fetchWeatherData() {
@@ -14,6 +15,7 @@ async function fetchWeatherData() {
     const data = await response.json();
     console.log(data);
     displayCurrentConditions(data);
+    displayWeeklyForecast(data);
 
 }
 
