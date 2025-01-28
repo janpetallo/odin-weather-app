@@ -10,13 +10,7 @@ const precipitationElement = document.querySelector('#precipitationValue');
 const humidityElement = document.querySelector('#humidityValue');
 const windElement = document.querySelector('#windValue');
 
-function convertToCelcius(fahrenheit) {
-    return ((fahrenheit - 32) * 5 / 9).toFixed(1);
-}
-
-function convertToKmh(mph) {
-    return (mph * 1.60934).toFixed(1);
-}
+import { convertToCelcius, convertToKmh } from './converter.js';
 
 function displayCurrentConditions(data, isFahrenheit) {
     const currentConditions = data.currentConditions;
