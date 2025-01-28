@@ -34,7 +34,7 @@ body {
 
 #currentConditions {
   background-color: var(--secondary-color);
-  padding: 1rem;
+  padding: 2rem 10rem;
   text-align: center;
 }
 
@@ -120,6 +120,8 @@ body {
   justify-content: space-between;
   align-items: center;
 
+  
+
   font-weight: 700;
 }
 
@@ -134,32 +136,48 @@ body {
 
 #currentConditions #current_important #currentConditions_city{
   font-size: 2rem;
-  
-
-
-
 }
 
 #currentConditions #current_important #currentConditions_temperature {
   font-size: 4rem;
-  
 }
 
 #currentConditions #current_more_info {
   display: flex;
   flex-direction: column;
-  
-  
+  justify-content: center;
 
-  background-color: white;
+  padding: 0;
+  
+  
+  
 }
 
-#feelsLikeContainer, #windContainer, #humidityContainer {
+#highLowContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+  
+}
+
+
+  #feelsLikeContainer, #precipitationContainer, #windContainer, #humidityContainer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 
-  background-color:#2563eb
+  padding: 0.5rem 0;
+  border-bottom: #2563eb 1px solid;
+
+  
+  
+  
+}
+
+#feelsLikeLabel, #windLabel, #humidityLabel {
+  
+  
 }
 
 
