@@ -1,6 +1,9 @@
 const weeklyElement = document.querySelector('#weeklyForecast_container');
 
 function displayWeeklyForecast(data) {
+    // Clear the weekly forecast container 
+    weeklyElement.innerHTML = ''; 
+
     const weeklyForecast = data.days;
     console.log(weeklyForecast);
     weeklyForecast.forEach(day => {

@@ -10,8 +10,9 @@ import { displayCurrentConditions } from "./modules/current";
 import { displayWeeklyForecast } from "./modules/weekly";
 
 
-async function fetchWeatherData() {
-    const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/calgary?unitGroup=us&key=MKKNHQDK4MYP85WWXKVT6FV2V&contentType=json`,
+
+async function fetchWeatherData(city) {
+    const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=us&key=MKKNHQDK4MYP85WWXKVT6FV2V&contentType=json`,
         { mode: 'cors' }
     );
     const data = await response.json();
@@ -21,7 +22,18 @@ async function fetchWeatherData() {
 
 }
 
-fetchWeatherData().then(data => {
+document.getElementById('searchInput').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        const city = event.target.value;
+        fetchWeatherData(city).then(data => {
+            displayCurrentConditions(data);
+            displayWeeklyForecast(data);
+        });
+    }
+});
+
+// Default to Calgary
+fetchWeatherData('Calgary').then(data => {
     displayCurrentConditions(data);
     displayWeeklyForecast(data);
 });
