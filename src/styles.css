@@ -91,14 +91,7 @@ body {
   font-size: 1rem;
 }
 
-#header #searchContainer button {
-  
-  height: 1.5rem;
-  border: none;
-  border-radius: 0.5rem;
-  background-color: white;
-  margin-left: 0.5rem;
-}
+
 
 #header #searchContainer img {
   width: 2rem;
@@ -106,13 +99,44 @@ body {
   margin-right: 1rem;
 }
 
+/* filepath: /home/janp/odin-project/javascript-path/odin-weather-app/src/scss/styles.scss */
+#unitToggleContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+#unitToggleContainer button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+#unitToggleContainer button:hover {
+  background-color: #0056b3;
+}
+
+#unitToggleContainer button.active {
+  background-color: #0056b3;
+}
+
+
+
 #currentConditions {
   display: flex;
   flex-direction: column;
   
   
   
-  
+
 }
 
 #currentConditions #current_important {

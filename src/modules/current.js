@@ -1,3 +1,5 @@
+import { is } from "date-fns/locale";
+
 const cityElement = document.querySelector('#currentConditions_city');
 const countryElement = document.querySelector('#currentConditions_country');
 const temperatureElement = document.querySelector('#currentConditions_temperature');
@@ -8,27 +10,35 @@ const precipitationElement = document.querySelector('#precipitationValue');
 const humidityElement = document.querySelector('#humidityValue');
 const windElement = document.querySelector('#windValue');
 
-function displayCurrentConditions(data) {
+function convertToCelcius(fahrenheit) {
+    return ((fahrenheit - 32) * 5 / 9).toFixed(1);
+}
+
+function convertToKmh(mph) {
+    return (mph * 1.60934).toFixed(1);
+}
+
+function displayCurrentConditions(data, isFahrenheit) {
     const currentConditions = data.currentConditions;
     const [city, stateProvince, country] = data.resolvedAddress.split(',');
-    const currentTemp = currentConditions.temp;
-    const feelsLike = currentConditions.feelslike;
+    const currentTemp = isFahrenheit ? currentConditions.temp : convertToCelcius(currentConditions.temp);
+    const feelsLike = isFahrenheit ? currentConditions.feelslike : convertToCelcius(currentConditions.feelslike);
     const precipitation = currentConditions.precipprob;
-    const high = data.days[0].tempmax;
-    const low = data.days[0].tempmin;
+    const high =  isFahrenheit ? data.days[0].tempmax : convertToCelcius(data.days[0].tempmax);
+    const low = isFahrenheit ? data.days[0].tempmin : convertToCelcius(data.days[0].tempmin);
     const conditions = currentConditions.conditions;
     const humidity = currentConditions.humidity;
-    const wind = currentConditions.windspeed;
+    const wind = isFahrenheit ? currentConditions.windspeed : convertToKmh(currentConditions.windspeed);
 
     cityElement.textContent = city;
     countryElement.textContent = country;
-    temperatureElement.textContent = currentTemp;
+    temperatureElement.textContent = isFahrenheit ? `${currentTemp}°F` : `${currentTemp}°C`;
     highLowElement.textContent = `H: ${high} / L: ${low}`;
     descriptionElement.textContent = conditions;
-    feelsLikeElement.textContent = feelsLike;
+    feelsLikeElement.textContent = isFahrenheit ? `${feelsLike}°F` : `${feelsLike}°C`;
     precipitationElement.textContent = `${precipitation}%`;
-    humidityElement.textContent = humidity;
-    windElement.textContent = wind;
+    humidityElement.textContent = `${humidity}%`;
+    windElement.textContent = isFahrenheit ? `${wind} mph` : `${wind} km/h`;
 }
 
 export { displayCurrentConditions };
