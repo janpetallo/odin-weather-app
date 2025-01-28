@@ -28,6 +28,10 @@ body {
   padding: 1rem;
   text-align: center;
 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   
 
 }
@@ -49,7 +53,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
+  
 
 }
 
@@ -86,6 +90,7 @@ body {
   width: 10rem;
   height: 1rem;
   padding: 0.5rem;
+  margin-right: 1rem;
   border: none;
   border-radius: 0.5rem;
   font-size: 1rem;
@@ -99,11 +104,10 @@ body {
   margin-right: 1rem;
 }
 
-/* filepath: /home/janp/odin-project/javascript-path/odin-weather-app/src/scss/styles.scss */
 #unitToggleContainer {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  align-items: center;
 }
 
 #unitToggleContainer button {
@@ -114,7 +118,6 @@ body {
   text-decoration: none;
   display: inline-block;
   font-size: 1rem;
-  margin: 0.5rem;
   cursor: pointer;
   border-radius: 0.5rem;
   transition: background-color 0.3s ease;
