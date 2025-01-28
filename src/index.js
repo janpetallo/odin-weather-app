@@ -32,6 +32,7 @@ document.getElementById('searchInput').addEventListener('keypress', function(eve
     }
 });
 
+// Initial load
 // Default to Calgary
 fetchWeatherData('Calgary').then(data => {
     displayCurrentConditions(data);
