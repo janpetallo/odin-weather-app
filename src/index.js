@@ -12,17 +12,25 @@ import { displayWeeklyForecast } from "./modules/weekly";
 const searchInput = document.getElementById('searchInput');
 const celsiusButton = document.getElementById('celsiusButton');
 const fahrenheitButton = document.getElementById('fahrenheitButton');
+const errorMessage = document.getElementById('errorMessage');
 let isFahrenheit = true;
 
 async function fetchWeatherData(city) {
-    const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=us&key=MKKNHQDK4MYP85WWXKVT6FV2V&contentType=json`,
-        { mode: 'cors' }
-    );
-    const data = await response.json();
-    console.log(data);
-    
-    return data;
-
+    try {
+        const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=us&key=MKKNHQDK4MYP85WWXKVT6FV2V&contentType=json`, { mode: 'cors' });
+        if (!response.ok) {
+            throw new Error('City not found');
+        }
+        const data = await response.json();
+        console.log(data);
+        errorMessage.style.display = 'none';    
+        
+        return data;
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        errorMessage.style.display = 'block';
+        throw error;
+    }
 }
 
 searchInput.addEventListener('keypress', function(event) {
