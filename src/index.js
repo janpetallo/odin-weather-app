@@ -28,7 +28,7 @@ async function fetchWeatherData(city) {
         return data;
     } catch (error) {
         console.error('Error fetching data:', error);
-        errorMessage.style.display = 'block';
+        errorMessage.style.display = 'flex';
         throw error;
     }
 }

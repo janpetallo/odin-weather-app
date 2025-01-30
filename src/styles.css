@@ -131,17 +131,16 @@ body {
   background-color: #0056b3;
 }
 
-#errorContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 #errorMessage {
   color: red ;
-  padding: 1rem;
   font-size: 1rem;
   font-weight: 700;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -203,22 +202,16 @@ body {
 }
 
 
-  #feelsLikeContainer, #precipitationContainer, #windContainer, #humidityContainer {
-  display: flex;
-  justify-content: space-between;
+#feelsLikeContainer, #precipitationContainer, #windContainer, #humidityContainer {
+display: flex;
+justify-content: space-between;
 
-  padding: 0.5rem 0;
-  border-bottom: #2563eb 1px solid;
+padding: 0.5rem 0;
+border-bottom: #2563eb 1px solid;
 
-  
-  
-  
 }
 
-#feelsLikeLabel, #windLabel, #humidityLabel {
-  
-  
-}
+
 
 
 
