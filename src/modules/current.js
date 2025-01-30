@@ -29,13 +29,13 @@ function displayCurrentConditions(data, isFahrenheit) {
     dayElement.textContent = today;
     cityElement.textContent = city;
     countryElement.textContent = country;
-    temperatureElement.textContent = isFahrenheit ? `${currentTemp}°F` : `${currentTemp}°C`;
+    temperatureElement.textContent = `${currentTemp}${isFahrenheit ? '°F' : '°C'}`;
     highLowElement.textContent = `H: ${high} / L: ${low}`;
     descriptionElement.textContent = conditions;
-    feelsLikeElement.textContent = isFahrenheit ? `${feelsLike}°F` : `${feelsLike}°C`;
+    feelsLikeElement.textContent = `${feelsLike} ${isFahrenheit ? '°F' : '°C'}`;
     precipitationElement.textContent = `${precipitation}%`;
     humidityElement.textContent = `${humidity}%`;
-    windElement.textContent = isFahrenheit ? `${wind} mph` : `${wind} km/h`;
+    windElement.textContent = `${wind} ${isFahrenheit ? 'mph' : 'km/h'}`;
 }
 
 export { displayCurrentConditions };
