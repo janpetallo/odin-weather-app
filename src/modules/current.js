@@ -1,4 +1,4 @@
-import { is } from "date-fns/locale";
+
 
 const cityElement = document.querySelector('#currentConditions_city');
 const countryElement = document.querySelector('#currentConditions_country');
