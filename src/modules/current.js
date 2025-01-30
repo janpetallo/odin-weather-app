@@ -1,8 +1,9 @@
-
+import { parseISO, format } from "date-fns";
 
 const cityElement = document.querySelector('#currentConditions_city');
 const countryElement = document.querySelector('#currentConditions_country');
 const temperatureElement = document.querySelector('#currentConditions_temperature');
+const dayElement = document.querySelector('#currentDay');
 const highLowElement = document.querySelector('#highLowValue');
 const descriptionElement = document.querySelector('#currentConditions_description');
 const feelsLikeElement = document.querySelector('#feelsLikeValue');
@@ -13,6 +14,7 @@ const windElement = document.querySelector('#windValue');
 import { convertToCelcius, convertToKmh } from './converter.js';
 
 function displayCurrentConditions(data, isFahrenheit) {
+    const today = format(parseISO(data.days[0].datetime), 'EEEE');
     const currentConditions = data.currentConditions;
     const [city, stateProvince, country] = data.resolvedAddress.split(',');
     const currentTemp = isFahrenheit ? currentConditions.temp : convertToCelcius(currentConditions.temp);
@@ -24,6 +26,7 @@ function displayCurrentConditions(data, isFahrenheit) {
     const humidity = currentConditions.humidity;
     const wind = isFahrenheit ? currentConditions.windspeed : convertToKmh(currentConditions.windspeed);
 
+    dayElement.textContent = today;
     cityElement.textContent = city;
     countryElement.textContent = country;
     temperatureElement.textContent = isFahrenheit ? `${currentTemp}°F` : `${currentTemp}°C`;
