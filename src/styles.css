@@ -211,6 +211,29 @@ border-bottom: #2563eb 1px solid;
 
 }
 
+#weeklyForecast_title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+#weeklyForecast_container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 1rem;
+}
+
+.weeklyForecast_day {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  margin: 0.5rem;
+}
+
 
 
 
