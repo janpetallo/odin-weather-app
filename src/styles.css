@@ -226,7 +226,7 @@ border-bottom: #2563eb 1px solid;
 .weeklyForecast_day {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 1rem;
   border-radius: 0.5rem;
@@ -234,6 +234,15 @@ border-bottom: #2563eb 1px solid;
   margin: 0.5rem;
 }
 
+.weeklyForecast_dayTemp {
+  font-size: 0.8rem;
+  
+}
+
+.weeklyForecast_dayConditions {
+  font-size: 0.8rem;
+  
+}
 
 
 

@@ -15,7 +15,8 @@ function displayWeeklyForecast(data) {
         dayElement.classList.add('weeklyForecast_day');
         dayElement.innerHTML = `
             <div class="weeklyForecast_dayName">${dayName}</div>
-            <div class="weeklyForecast_dayTemp">H: ${day.tempmax} / L: ${day.tempmin}</div>
+            <div class="weeklyForecast_dayTemp">H: ${day.tempmax} </div>
+            <div class="weeklyForecast_dayTemp">L: ${day.tempmin}</div>
             <div class="weeklyForecast_dayConditions">${day.conditions}</div>
         `;
         weeklyElement.appendChild(dayElement);
