@@ -18,9 +18,6 @@ let isFahrenheit = true;
 async function fetchWeatherData(city) {
     try {
         const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=us&key=MKKNHQDK4MYP85WWXKVT6FV2V&contentType=json`, { mode: 'cors' });
-        if (!response.ok) {
-            throw new Error('City not found');
-        }
         const data = await response.json();
         console.log(data);
         errorMessage.style.display = 'none';    
