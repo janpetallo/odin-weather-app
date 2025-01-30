@@ -54,7 +54,7 @@ celsiusButton.addEventListener('click', function() {
     });
 });
 
-document.getElementById('fahrenheitButton').addEventListener('click', function() {
+fahrenheitButton.addEventListener('click', function() {
     isFahrenheit = true;
     fahrenheitButton.classList.add('active');
     celsiusButton.classList.remove('active');
