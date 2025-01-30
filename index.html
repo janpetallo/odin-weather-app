@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script defer src="main.js"></script></head>
+  <body>
+    <div class="app-container"> 
+      <div id="header">
+        <div id="app">
+          <img src="6f820e22bb6a837378b8.svg" alt="Weather Icon" />
+          <div id = 'title_container'>
+            <div id="app_title">Weather App</div>
+            <div id="app_subtitle">Data from Visual Crossing </div>
+          </div>
+        </div>
+
+        <div id="searchContainer">
+          <img src="6c039fe9d8f89874a56d.svg" alt="Search Icon" />
+          <input type="text" id="searchInput" placeholder="Enter a city" />
+          <div id="unitToggleContainer">
+            <button id="fahrenheitButton">°F</button>
+            <button id="celsiusButton">°C</button>
+          </div>
+        </div>
+      </div>
+
+      
+      <div id="errorMessage">City not found. Please try again.</div>
+      
+
+      <div id="currentConditions">
+        <div id="current_important">
+          <div id="location">
+            <div id="currentConditions_city">City</div>
+            <div id="currentConditions_country">Country</div>
+          </div>
+          
+          <div id="currentConditions_temperature">Temperature</div>
+        </div>
+
+        <div id="highLowContainer">
+          <div id="currentDay">Day</div>
+          <div id="currentConditions_description">Description</div>
+          <div id="highLowValue">Value</div>
+
+        </div>
+        
+
+        <div id="current_more_info">
+          
+          <div id="feelsLikeContainer">
+            <div id="feelsLikeLabel">Feels Like</div>
+            <div id="feelsLikeValue">Value</div>
+          </div>
+
+          <div id="precipitationContainer">
+            <div id="precipitationLabel">Chance of Precipitation</div>
+            <div id="precipitationValue">Value</div>
+          </div>
+
+          <div id="humidityContainer">
+            <div id="humidityLabel">Humidity</div>
+            <div id="humidityValue">Value</div>
+          </div>
+
+          <div id="windContainer">
+            <div id="windLabel">Wind</div>
+            <div id="windValue">Value</div>
+          </div>
+
+        </div>
+        
+      </div>
+
+      <div id="weeklyForecast">
+        <div id="weeklyForecast_title">Weekly Forecast</div>
+        <div id="weeklyForecast_container"></div>
+      </div>
+
+  </body>
+</html>
