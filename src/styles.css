@@ -341,9 +341,6 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  #weeklyForecast_container {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
 @media (max-width: 768px) {
@@ -416,10 +413,6 @@ body {
     padding: 1rem;
   }
 
-  #weeklyForecast_container {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.75rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -448,9 +441,6 @@ body {
     grid-template-columns: 1fr;
   }
 
-  #weeklyForecast_container {
-    grid-template-columns: repeat(2, 1fr);
-  }
 
   .weeklyForecast_day {
     padding: 1rem 0.75rem;
