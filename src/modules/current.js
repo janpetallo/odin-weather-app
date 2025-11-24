@@ -16,7 +16,18 @@ import { convertToCelcius, convertToKmh } from './converter.js';
 function displayCurrentConditions(data, isFahrenheit) {
     const today = format(parseISO(data.days[0].datetime), 'EEEE');
     const currentConditions = data.currentConditions;
-    const [city, stateProvince, country] = data.resolvedAddress.split(',');
+    const addressParts = data.resolvedAddress.split(',').map(part => part.trim());
+    
+    const capitalizeWords = (str) => {
+        return str
+            .toLowerCase()
+            .split(' ')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+    };
+
+    const city = capitalizeWords(addressParts[0]);
+    const country = addressParts.slice(1).map(part => capitalizeWords(part)).join(', ');
     const currentTemp = isFahrenheit ? currentConditions.temp : convertToCelcius(currentConditions.temp);
     const feelsLike = isFahrenheit ? currentConditions.feelslike : convertToCelcius(currentConditions.feelslike);
     const precipitation = currentConditions.precipprob;
