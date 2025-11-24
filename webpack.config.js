@@ -1,4 +1,3 @@
-
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
@@ -60,7 +59,14 @@ module.exports = {
           },
           {
             // Loads a SASS/SCSS file and compiles it to CSS
-            loader: 'sass-loader'
+            loader: 'sass-loader',
+            options: {
+              api: 'modern',
+              implementation: require('sass'),
+              sassOptions: {
+                silenceDeprecations: ['color-functions', 'global-builtin', 'import'],
+              },
+            },
           }
         ]
       }

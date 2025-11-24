@@ -13,7 +13,7 @@ const searchInput = document.getElementById('searchInput');
 const celsiusButton = document.getElementById('celsiusButton');
 const fahrenheitButton = document.getElementById('fahrenheitButton');
 const errorMessage = document.getElementById('errorMessage');
-let isFahrenheit = true;
+let isFahrenheit = false;
 
 async function fetchWeatherData(city) {
     try {
@@ -67,7 +67,7 @@ fahrenheitButton.addEventListener('click', function() {
 fetchWeatherData('Calgary').then(data => {
     displayCurrentConditions(data, isFahrenheit);
     displayWeeklyForecast(data, isFahrenheit);
-    fahrenheitButton.classList.add('active');
+    celsiusButton.classList.add('active');
 });
 
 
